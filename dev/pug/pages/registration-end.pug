@@ -1,0 +1,14 @@
+extends ../layout/main
+
+block variables
+	- const title = 'HUB - Поздравляем!'
+	- const description = ''
+	- const keywords = ''
+
+block content
+	+b.enter-wrapper.box-row.space-center
+		+b.enter-box.box-col.radius13
+			+e('b').title.titleLevel1 Поздравляем!
+			+e('span').label Вы успешно зарегистрировались в Project HUB и можете приступить к работе
+			+e('img')(src=`${generalImages}/register-end.svg`).start-pic.self-center
+			+e('button').start-button.purpleButton.self-end Начать

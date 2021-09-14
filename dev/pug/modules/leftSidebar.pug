@@ -1,0 +1,28 @@
+- const list = ['Проекты', 'Задачи', 'Мои документы', 'Заявки', 'База фриланса', 'Чаты', 'Уведомления']
+- let index = 0
+- let icon = ''
+- let activeClass = 'active'
+
++b('aside').left-sidebar
+	+e('nav').navigation.box-col
+		each item in list
+			- index++
+			if index !== 1
+				- activeClass = ''
+			+e('a').link.box-row.align-center(href='/' class=`${activeClass}`)
+				+e('span').link-icon.box-row.space-center
+					if index === 1
+						+projects()
+					if index === 2
+						+tasks()
+					if index === 3
+						+documents()
+					if index === 4
+						+requistions()
+					if index === 5
+						+freelance()
+					if index === 6
+						+messages()
+					if index === 7
+						+notifications()
+				!=item

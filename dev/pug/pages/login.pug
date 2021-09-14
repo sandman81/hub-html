@@ -1,0 +1,28 @@
+extends ../layout/main
+
+block variables
+	- const title = 'HUB - Авторизация'
+	- const description = ''
+	- const keywords = ''
+
+block content
+	span.registerLink
+		| У Вас  еще нет аккаунта? 
+		a(href='/') Регистрация
+	+b.enter-wrapper.box-row.space-center
+		+b.enter-box.box-col.radius13
+			+e('b').title.titleLevel1 Авторизация
+			+e('span').label Введите данные для входа в систему
+			+e('form').form
+				+e.field.box-row.align-center
+					+e('label').field-label Телефон
+					+e('input')(type='text').field-input.inputText
+				+e.field.box-row.align-center.loginPassword
+					+e('label').field-label Пароль
+					+e('input')(type='password').field-input.inputText
+					div.viewPass: +viewPass()
+				+e.action.box-col
+					+e('span').restore
+						| Забыли пароль? 
+						a(href='/') Восстановить
+					+e('button').submit.purpleButton Авторизация

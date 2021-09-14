@@ -1,0 +1,51 @@
+extends ../layout/main
+
+block variables
+	- const title = 'HUB - Регистрация'
+	- const description = ''
+	- const keywords = ''
+
+block content
+	span.registerLink
+		| У Вас есть аккаунт? 
+		a(href='/') Авторизация
+	+b.enter-wrapper.box-row.space-center
+		+b.enter-box.box-col.radius13
+			+e('b').title.titleLevel1 Регистрация
+			+e('span').label Зарегистрируйте свой аккаунт
+			+e('form').form
+				+e.field.box-row.align-center
+					+e('label').field-label Имя
+					+e('input')(type='text').field-input.inputText
+				+e.field.box-row.align-center.relative
+					+e('label').field-label Придумайте пароль
+					+e('input')(type='password').field-input.inputText
+					div.viewPass: +viewPass()
+				+e.field.box-row.align-center.relative
+					+e('label').field-label Повторите пароль
+					+e('input')(type='password').field-input.inputText
+				+e.field.box-row.align-center
+					+e('label').field-label Номер телефона
+					.box-col.align-start.full-width
+						+e('input')(type='text').field-input.inputText
+						+e('span').change-tel.textLink Изменить номер телефона
+				+e.field.box-row.align-center
+					+e('label').field-label Введите код из SMS
+					.box-row
+						+e.code.box-row.space-between
+							+e('input')(type='text' maxlength='1' placeholder='0').code-input.inputText
+							+e('input')(type='text' maxlength='1' placeholder='0').code-input.inputText
+							+e('input')(type='text' maxlength='1' placeholder='0').code-input.inputText
+							+e('input')(type='text' maxlength='1' placeholder='0').code-input.inputText
+						+e.code-label
+							| Время ожидания истекло 
+							b.textLink Отправить повторно
+				+e.action.box-col
+					+e('span').agree.box-row
+						+e('label').agree-checkbox.checkboxField
+							input(type='checkbox')
+							span.box-row.align-middle: +checkbox()
+						+e('span').agree-text
+							| Я ознакомлен и согласен с 
+							a(href='/') условиями использования
+					+e('button').submit.purpleButton Зарегистрироваться

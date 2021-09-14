@@ -1,0 +1,29 @@
+include ../../../node_modules/bemto.pug/bemto
+include ../mixins
+block variables
+- const generalImages = './static/img/general'
+- const contentImages = './static/img/content'
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		link(href="./static/img/general/favicon.ico" rel="shortcut icon")
+		title #{title}
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="description" content=`${description}`)
+		meta(name="keywords" content=`${keywords}`)
+		//- meta(property="og:image" content="./static/img/general/preview.png")
+		link(rel="stylesheet" type='text/css' href="./static/css/main.css")
+	body
+		.layout-body.box-col
+			.content-wrapper
+				a(href='/').logo: +logo()
+				block content
+				if layout
+					.layout-container.box-row.full-height
+						include ../modules/leftSidebar
+						include ../components/main
+			if withModal
+				include ../modules/modalWrapper
+		block script

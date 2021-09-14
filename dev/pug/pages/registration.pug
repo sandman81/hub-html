@@ -1,0 +1,39 @@
+extends ../layout/main
+
+block variables
+	- const title = 'HUB - Регистрация'
+	- const description = ''
+	- const keywords = ''
+
+block content
+	span.registerLink
+		| У Вас есть аккаунт? 
+		a(href='/') Авторизация
+	+b.enter-wrapper.box-row.space-center
+		+b.enter-box.box-col.radius13
+			+e('b').title.titleLevel1 Регистрация
+			+e('span').label Зарегистрируйте свой аккаунт
+			+e('form').form
+				+e.field.box-row.align-center
+					+e('label').field-label Имя
+					+e('input')(type='text').field-input.inputText
+				+e.field.box-row.align-center.relative
+					+e('label').field-label Придумайте пароль
+					+e('input')(type='password').field-input.inputText
+					div.viewPass: +viewPass()
+				+e.field.box-row.align-center.relative
+					+e('label').field-label Повторите пароль
+					+e('input')(type='password').field-input.inputText
+				+e.field.box-row.align-center.relative
+					+e('label').field-label Номер телефона
+					+e('input')(type='text').field-input.inputText
+				+e.action.box-col
+					+e('span').agree.box-row
+						+e('label').agree-checkbox.checkboxField
+							input(type='checkbox')
+							span.box-row.align-middle: +checkbox()
+						+e('span').agree-text
+							| Я ознакомлен и согласен с 
+							a(href='/') условиями использования
+					+e('button').confirm.purpleLightButton Подтвердить номер
+					+e('button')(disabled).submit.purpleButton Зарегистрироваться

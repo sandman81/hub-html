@@ -1,0 +1,26 @@
+extends ../layout/main
+
+block variables
+	- const title = 'HUB - Заполните форму'
+	- const description = ''
+	- const keywords = ''
+	- const list = ['Куратор', 'Заказчик', 'Помощник создателя (заказчика)', 'Аудитор', 'ГИП', 'Субподрядчик', 'Менеджер проекта<br> (финансовый руководитель)', 'Генподрядчик (юр.лицо)']
+
+block content
+	+b.enter-wrapper.box-row.space-center
+		+b.enter-box.box-col.radius13
+			+e('b').title.titleLevel1 Заполните форму
+			+e('span').label Необходимо заполнить роли для работы в системе
+			+e('form').form-rights.box-row
+				+e('span').form-rights-title Роль в системе
+				.box-col.flex-full
+					each item in list
+						+e('label').form-rights-field.box-row.space-between
+							+e('span').form-rights-label.box-row.align-baseline
+								!=item
+								+e('span').form-rights-help.box-row.align-middle: +help()
+							+switcher()
+					+e('span').form-rights-error.errorText Выберите хотя бы одну роль
+					+e('button').save.purpleButton.self-end Сохранить
+
+
