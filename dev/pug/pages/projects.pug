@@ -5,9 +5,111 @@ block variables
 	- const description = ''
 	- const keywords = ''
 	- const layout = true
+	- const pageTitle = 'Проекты'
+	- const options = ['Создатель', 'Куратор', 'Аудитор', 'Исполнитель']
+	- const labels = ['Название', 'Вид строительства', 'Вид объекта', 'Регион', 'Дата начала', 'Дата завершения', 'Создатель']
+	-
+		const list1 = [
+			['ЖК “Новый век”', 'Новое строительство', 'Капитальное строительство Непроизводственного назначения', 'Россия, Москва', '17.04.2021', '17.04.2022', 'Savannah Nguyen'],
+			['Abstergo Ltd.', 'Реконструкция', 'Некапитальное строительство', 'Россия, Нижний Новгород', '17.04.2021', '17.04.2022', 'Savannah Nguyen'],
+			['Big Kahuna Burger Ltd.', 'Капитальный ремонт', 'Капитальное строительство Непроизводственного назначения', 'Россия, Санкт-Петербург', '17.04.2021', '17.04.2022', 'Savannah Nguyen']
+		]
+	-
+		const list2 = [
+			['Acme Co.', 'Реконструкция', 'Капитальное строительство Непроизводственного назначения', 'Россия, Москва', '17.04.2021', '17.04.2022', 'Savannah Nguyen'],
+			['Binford Ltd.', 'Реконструкция', 'Некапитальное строительство', 'Россия, Нижний Новгород', '17.04.2021', '17.04.2022', 'Savannah Nguyen'],
+			['Biffco Enterprises Ltd.', 'Капитальный ремонт', 'Капитальное строительство Непроизводственного назначения', 'Россия, Санкт-Петербург', '17.04.2021', '17.04.2022', 'Savannah Nguyen'],
+			['Barone LLC.', 'Капитальный ремонт', 'Капитальное строительство Непроизводственного назначения', 'Россия, Санкт-Петербург', '17.04.2021', '17.04.2022', 'Savannah Nguyen'],
+			['Abstergo Ltd.', 'Капитальный ремонт', 'Капитальное строительство Непроизводственного назначения', 'Россия, Санкт-Петербург', '17.04.2021', '17.04.2022', 'Savannah Nguyen']
+		]
+	- let labelIndex = 0
+	- let label2Index = 0
+	- let items1Index = 0
 
-block content
-	//- include ../components/catalogTop
-	//- section.catalog-section.box-row
-	//- 	include ../components/catalogSidebar
-	//- 	include ../components/catalogContent
+block main
+	.projects-sections
+		+b.project-section
+			+e.header.box-row.space-between
+				+e.header-left.box-row.align-center
+					+e('b').header-title.titleLevel2 В работе:
+					+e('b').header-counts 3
+				+e.header-options.box-row.align-center
+					each option in options
+						+e('label').header-option.box-row.align-center
+							+e('input')(type='checkbox')
+							+e('span').header-checkbox.box-row.align-middle: +checkboxBlack()
+							!=option
+			+e.labels.box-row
+				each label in labels
+					- labelIndex++
+					+e.labels-label.box-row.align-center(class=`label-${labelIndex}`)
+						!=label
+						if labelIndex === 1
+							+sort()
+						else if labelIndex === 5
+							+sort()
+						else if labelIndex === 6
+							+sort()
+			+e.list
+				each row, rowIndex in list1
+					+e.list-row.box-row
+						each item in row
+							- items1Index++
+							- if (items1Index === row.length + 1) items1Index = 1
+								+e.list-item.box-row.align-center(class=`item-${items1Index}`)
+									if items1Index === 1
+										+e.list-item-pic.box-row.align-middle
+											if rowIndex === 0
+												img(src=`${contentImages}/project-1.png`)
+											else if rowIndex === 1
+												img(src=`${contentImages}/project-2.png`)
+											else if rowIndex === 2
+												img(src=`${contentImages}/project-3.png`)
+									if items1Index === row.length
+										+e('img')(src=`${contentImages}/project-user.png`).list-item-creator-pic
+									!=item
+		+b.project-section
+			+e.header.box-row.space-between
+				+e.header-left.box-row.align-center
+					+e('b').header-title.titleLevel2 Завершенные:
+					+e('b').header-counts 12
+				+e.header-options.box-row.align-center
+					each option in options
+						+e('label').header-option.box-row.align-center
+							+e('input')(type='checkbox')
+							+e('span').header-checkbox.box-row.align-middle: +checkboxBlack()
+							!=option
+			+e.labels.box-row
+				each label in labels
+					- label2Index++
+					+e.labels-label.box-row.align-center(class=`label-${label2Index}`)
+						!=label
+						if label2Index === 1
+							+sort()
+						else if label2Index === 5
+							+sort()
+						else if label2Index === 6
+							+sort()
+			+e.list
+				each row, rowIndex in list2
+					+e.list-row.box-row
+						each item in row
+							- items1Index++
+							- if (items1Index === row.length + 1) items1Index = 1
+								+e.list-item.box-row.align-center(class=`item-${items1Index}`)
+									if items1Index === 1
+										+e.list-item-pic.box-row.align-middle
+											if rowIndex === 0
+												img(src=`${contentImages}/project-4.png`)
+											else if rowIndex === 1
+												img(src=`${contentImages}/project-5.png`)
+											else if rowIndex === 2
+												img(src=`${contentImages}/project-6.png`)
+											else if rowIndex === 3
+												img(src=`${contentImages}/project-7.png`)
+											else if rowIndex === 4
+												+e('span').list-item-no-avatar a
+									if items1Index === row.length
+										+e('img')(src=`${contentImages}/project-user.png`).list-item-creator-pic
+									!=item
+

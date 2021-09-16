@@ -1,8 +1,19 @@
 +b('header').header.box-row.align-center.space-between
 	+e.left.box-row.align-center
-		+e('b').title.titleLevel1 Проекты
+		+e('b').title.titleLevel1=pageTitle
 		+e('button').add.addButton: +plus()
 	+e.right.box-row.align-center
 		+e.search.relative
 			+e('input')(type='text' placeholder='Search').search-input.searchField
-			+e('span').search-icon: +search()
+			+e('span').search-icon.box-row: +search()
+		+e.user.box-row.align-center.relative
+			+e('span').user-title Елена
+			+e('img')(src=`${contentImages}/user.png`).user-pic
+			+arrow()
+			+e.user-dropdown.box-col
+				+e('a')(href='/').user-dropdown-action.box-row.align-center
+					+e('span').user-dropdown-icon.box-row.space-center: +profile()
+					| Перейти в профиль
+				+e('a')(href='/').user-dropdown-action.box-row.align-center
+					+e('span').user-dropdown-icon.box-row.space-center: +logout()
+					| Выйти

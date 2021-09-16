@@ -47,6 +47,13 @@
     font-weight 500
     width 226px
 
+.addButton
+    width 36px
+    height 36px
+    border-radius 8px
+    border none
+    cursor pointer
+    background-color violetColor
 
 
 
@@ -128,6 +135,23 @@
             top -3px
             transition background-color 200ms, left 200ms
 
+.searchField
+    height 32px
+    width 323px
+    border-radius 8px
+    background-color #EFF1F7
+    border 1px solid grayBorder
+    padding 0 10px 0 38px
+    font-size 12px
+    color grayTextLight
+    font-weight 500
+    +placeholder()
+        opacity 1
+        color grayTextLight
+    &:focus
+        +placeholder()
+            opacity 0
+
 // titles
 
 .titleLevel1
@@ -136,6 +160,11 @@
     line-height 41px
     color grayText
 
+.titleLevel2
+    font-size 20px
+    line-height 27px
+    font-weight 700
+    color grayText
 
 // scroll
 

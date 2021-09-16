@@ -1,5 +1,53 @@
 .header
-    flex 0 0 74px
+    position fixed
+    right 0
+    top 0
+    width calc(100vw - 321px)
+    height 74px
     background-color whiteLight
     border-bottom 1px solid grayBorder
     padding 0 80px 0 24px
+    &__add
+        margin-left 20px
+    &__search
+        &-icon
+            width 11px
+            height 12px
+            position absolute
+            top 10px
+            left 18px
+    &__user
+        margin-left 40px
+        cursor pointer
+        &-title
+            font-size 20px
+            font-weight 500
+            color grayText
+            margin-right 10px
+        &-pic
+            width 50px
+            height 50px
+            border-radius 50%
+            border 1px solid grayBorder
+            margin-right 9px
+        &-dropdown
+            position absolute
+            width 208px
+            right 0
+            top 50px
+            background-color #fff
+            border 1px solid grayBorder
+            border-radius 4px
+            &-action
+                flex 0 0 36px
+                color #000
+                padding 0 16px
+                font-size 14px
+                &:hover
+                    text-decoration none
+                    background-color #EFF1F7
+                &:not(:last-child)
+                    border-bottom 1px solid grayBorder
+            &-icon
+                flex 0 0 16px
+                margin-right 16px

@@ -1,0 +1,122 @@
+.project-section
+    &:not(:last-child)
+        margin-bottom 24px
+    &__header
+        background-color #fff
+        border-radius 13px 13px 0 0
+        border 1px solid grayBorder
+        height 55px
+        padding 0 23px 0 16px
+        &-counts
+            width 30px
+            height 30px
+            border-radius 50%
+            background-color violetColorLight
+            text-align center
+            line-height 30px
+            margin-left 9px
+            color violetColor
+        &-option
+            cursor pointer
+            font-size 14px
+            font-weight 500
+            line-height 20px
+            color #767676
+            &:not(:last-child)
+                margin-right 25px
+            input
+                display none
+        &-checkbox
+            width 16px
+            height 16px
+            border-radius 2px
+            border 1px solid #EEEEEE
+            margin-right 8px
+            svg
+                opacity 0
+            input:checked + & svg
+                opacity 1
+    &__labels
+        height 48px
+        background-color #EFF0F6
+        padding-left 16px
+        font-size 14px
+        font-weight 500
+        color violetColor
+        white-space nowrap
+        &-label
+            svg
+                margin-left 10px
+                position relative
+                top 1px
+            &.label-1
+                flex 0 1 225px
+                cursor pointer
+            &.label-2
+                flex 0 1 200px
+            &.label-3
+                flex 0 1 255px
+            &.label-4
+                flex 0 1 205px
+            &.label-5
+                flex 0 1 165px
+                cursor pointer
+            &.label-6
+                flex 0 1 198px
+                cursor pointer
+            &.label-7
+                flex 0 1 150px
+    &__list
+        background-color white
+        overflow hidden
+        border 1px solid grayBorder
+        border-radius 0 0 13px 13px
+        font-size 12px
+        line-height 17px
+        font-weight 500
+        color grayText3
+        letter-spacing -0.3px
+        &-row
+            height 64px
+            padding 0 16px
+            &:not(:last-child)
+                border-bottom 1px solid grayBorder
+        &-item
+            &.item-1
+                flex 0 1 225px
+            &.item-2
+                flex 0 1 200px
+            &.item-3
+                flex 0 1 255px
+            &.item-4
+                flex 0 1 205px
+            &.item-5
+                flex 0 1 165px
+            &.item-6
+                flex 0 1 198px
+            &.item-7
+                flex 0 1 150px
+            &-pic
+                width 30px
+                height 30px
+                margin-right 7px
+                img
+                    max-width 100%
+                    max-height 100%
+                    border-radius 50%
+            &-creator-pic
+                width 30px
+                height 30px
+                border-radius 50%
+                margin-right 7px
+            &-no-avatar
+                width 30px
+                height 30px
+                border-radius 50%
+                background-color violetColorLight
+                text-align center
+                line-height 30px
+                text-transform uppercase
+                font-size 12px
+                font-weight 500
+                color violetColor
