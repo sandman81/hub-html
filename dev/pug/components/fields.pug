@@ -1,0 +1,29 @@
+mixin textField(value, placeholder)
+    input(type='text' value=value placeholder=placeholder).inputText
+
+mixin dateField(value, placeholder)
+    +b.dateField
+        +e('input')(type='text' value=value placeholder=placeholder).field.inputText
+        +e('span').button.box-row.align-middle: +inputSelect()
+
+mixin selectField(value)
+    +b.selectField.inputText
+        +e('span').title=value
+        +e('span').button.box-row.align-middle: +inputSelect()
+
+mixin plusButton(className)
+    button.plusButton(class=className).box-row.align-middle: +plusPurple()
+
+mixin addButton(className)
+    button(class=className).addButton.box-row.align-middle: +plus()
+
+mixin filePreview(color, type, title)
+    +b.filePreview.box-row.align-center
+        +e.icon.box-row
+            +file()
+            +e('b')(style=`--color: ${color}`).type=type
+        +e.info.box-col
+            +e('span').title=title
+            +e.data.box-row
+                +e('span').date 19.07.2018, 17:39
+                +e('span').size 32 Мб

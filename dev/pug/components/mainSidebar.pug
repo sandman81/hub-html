@@ -1,0 +1,10 @@
+mixin mainSidebar(menu, activeIndex)
+	+b.main-sidebar
+		+e.menu.blockWhite
+			+e.menu-back.box-row.space-end: a(href='/') Вернуться на страницу
+			+e('nav').menu-nav.box-col
+				each link, index in menu
+					if index === activeIndex
+						+e('a')(href='/').menu-link.active=link
+					else
+						+e('a')(href='/').menu-link=link

@@ -1,0 +1,7 @@
+mixin tabs(tabs)
+	+b.tabs-section
+		+e.wrapper.box-row.full-height
+			- let activeClass = 'active'
+			each button, index in tabs
+				- if (index !== 0) activeClass = ''
+					+e.button(class=`${activeClass}`)=button

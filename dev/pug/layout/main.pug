@@ -1,5 +1,6 @@
 include ../../../node_modules/bemto.pug/bemto
 include ../mixins
+include ../components/fields
 block variables
 - const generalImages = './static/img/general'
 - const contentImages = './static/img/content'
@@ -22,8 +23,8 @@ html(lang="ru-RU")
 				block content
 				if layout
 					.layout-container.box-row.full-height
-						include ../components/main
 						include ../modules/leftSidebar
+						include ../components/main
 			if withModal
 				include ../modules/modalWrapper
 		block script

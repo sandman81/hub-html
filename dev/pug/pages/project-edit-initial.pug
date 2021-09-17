@@ -1,0 +1,47 @@
+extends ../layout/main
+include ../components/tabs
+include ../components/mainSidebar
+
+block variables
+	- const title = 'HUB - Проекты'
+	- const description = ''
+	- const keywords = ''
+	- const layout = true
+	- const pageTitle = 'Проекты'
+	- const innerPage = true
+	- const tabs = ['Базовые', 'Диаграмма Гантта', 'Финансовые выплаты', 'Итоговые файлы']
+	- const fields = ['Исходные данные', 'Комментарий']
+	- const sidebarMenu = ['Основная информация', 'Исходные данные']
+	-
+		const initials = [
+			'Проект планировки помещения',
+			'Результаты инженерных изысканий',
+			'Проект межевания территории',
+			'Технические условия'
+		]
+
+block main
+	+tabs(tabs)
+	+b.project-card.box-row.space-between.align-start
+		+e.main
+			+e.edit.blockWhite
+				+e.label.titleLevel2 Исходные данные
+				+e.form
+					each field, index in initials
+						+e.form-item.box-col
+							+e('span').initial-label=field
+							+e.initial-items.box-row.align-center
+								if index === 0
+									+addButton('add-button')
+									+filePreview('#EE7D6D', 'pdf', 'Графика.pdf')
+								else
+									+addButton()
+					each field, index in fields
+						+e.form-item.box-row.align-center
+							+e('label').form-label=field
+							if index === 0
+								+textField('', 'Заполните поле')
+							if index === 1
+								+textField('', 'Заполните поле')
+			button.purpleButton Сохранить
+		+mainSidebar(sidebarMenu, 1)
