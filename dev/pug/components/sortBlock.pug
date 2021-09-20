@@ -1,0 +1,6 @@
+mixin sortBlock(list)
+	+b.sortBlock.box-row
+		- let activeClass = 'active'
+		each button, index in sort
+			- if (index !== 0) activeClass = ''
+				+e('span').button(class=`${activeClass}`)=button

@@ -32,7 +32,7 @@ block main
 			+e.header.box-row.space-between
 				+e.header-left.box-row.align-center
 					+e('b').header-title.titleLevel2 В работе:
-					+e('b').header-counts 3
+					+countWidget(3, 'header-counts')
 				+e.header-options.box-row.align-center
 					each option in options
 						+e('label').header-option.box-row.align-center
@@ -72,7 +72,7 @@ block main
 			+e.header.box-row.space-between
 				+e.header-left.box-row.align-center
 					+e('b').header-title.titleLevel2 Завершенные:
-					+e('b').header-counts 12
+					+countWidget(12, 'header-counts')
 				+e.header-options.box-row.align-center
 					each option in options
 						+e('label').header-option.box-row.align-center

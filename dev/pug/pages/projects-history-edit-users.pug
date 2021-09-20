@@ -1,0 +1,98 @@
+extends ../layout/main
+include ../components/sortBlock
+
+block variables
+	- const title = 'HUB - Проекты'
+	- const description = ''
+	- const keywords = ''
+	- const layout = true
+	- const pageTitle = 'Проекты'
+	- const innerPage = true
+	- const periods = ['Сегодня', 'Вчера', 'Текущая неделя', 'Предыдущая неделя', 'Текущий месяц', 'Прошлый месяц']
+	- const dates = ['Начало', 'Конец']
+	- const sort = ['По порядку', 'В обратном порядке']
+	-
+		const list1 = [
+			['Savannah Nguyen', 'Перевел(а) задачу с этапа Новая в этап В работе', '09:20'],
+			['Savannah Nguyen', 'Добавил(а) исполнителя <a href="/">Екатерину Филимонову</a> к задаче', '15:40'],
+			['Savannah Nguyen', 'Откликнулся(лась) к заявке на задачу <a href="/">Savannah Nguyen</a>', '12:25']
+		]
+	-
+		const list2 = [
+			['Алиса Федорова', '<a href="/">Алиса Федорова</a> Откликнулся(лась) к заявке на задачу <a href="/">Проектирование дома</a>', '09:20'],
+			['Savannah Nguyen', 'Удалил(а) исполнителя  <a href="/">Александра Некрасова</a> у задачи <a href="/">Проектирование дома</a>', '15:40']
+		]
+	-
+		const list3 = [
+			['Алиса Федорова', 'Редактировал(а) поле ввода  <a href="/">Компетентность</a>, Архитектор', '09:20'],
+			['Savannah Nguyen', 'Редактировал(а) поле ввода <a href="/">Исходные данные</a>, Процесс строительства включает в себя все организационные, изыскательские, проектные, строительно-монтажные и пусконаладочные работы, связанные с созданием, изменением или сносом объекта, а также взаимодействие с компетентными органами по поводу производства таких работ.', '15:40'],
+			['Егор Аверин', 'Редактировал(а) поле ввода  <a href="/">Компетентность</a>, Технический директор', '09:20']
+		]
+
+	- let items1Index = 0
+	- const users = ['./static/img/content/project-user-1.png', './static/img/content/project-user-2.png', './static/img/content/project-user-3.png', './static/img/content/project-user-4.png']
+
+block main
+	+b.period-section.blockWhite.box-row.align-center.space-between.relative
+		.box-col
+			+e('h2').title.titleLevel2 История  объектов
+			+e('ul').list.box-row
+				- let activeClass = 'active'
+				each item, index in periods
+					- if (index !== 0) activeClass = ''
+						+e('li').item(class=`${activeClass}`)=item
+		+e.dates.box-row.space-between
+			each date in dates
+				+e.date.box-col
+					+e('label').date-label=date
+					+dateField('12.01.20')
+		+e.left-button.box-row.align-middle: +arrowLeft()
+	+b.history-section.blockWhite.box-col
+		+e.header.box-row.align-center.space-between
+			+e.performers.box-row.align-center
+				+e('b').header-title.titleLevel2 Исполнитель
+				+countWidget(12, 'header-counts')
+				+addUsers(users, 'header-users')
+				+editButton('edit-button')
+			+e.sort: +sortBlock(sort)
+		+e.list.gray-scrollable
+			+e.date 12.02.2020
+			each row in list1
+				+e.list-row.box-row
+					each item in row
+						- items1Index++
+						- if (items1Index === row.length + 1) items1Index = 1
+							+e.list-item.box-row.align-center(class=`item-${items1Index}`)
+								if items1Index === 1
+									+e('img')(src=`${contentImages}/project-user.png`).list-item-user-pic
+								if items1Index === 2
+									span!=item
+								else
+									=item
+			+e.date 13.02.2020
+			each row in list2
+				+e.list-row.box-row
+					each item in row
+						- items1Index++
+						- if (items1Index === row.length + 1) items1Index = 1
+							+e.list-item.box-row.align-center(class=`item-${items1Index}`)
+								if items1Index === 1
+									+e('img')(src=`${contentImages}/project-user.png`).list-item-user-pic
+								if items1Index === 2
+									span!=item
+								else
+									=item
+			+e.date 15.02.2020
+			each row in list3
+				+e.list-row.box-row
+					each item in row
+						- items1Index++
+						- if (items1Index === row.length + 1) items1Index = 1
+							+e.list-item.box-row.align-center(class=`item-${items1Index}`)
+								if items1Index === 1
+									+e('img')(src=`${contentImages}/project-user.png`).list-item-user-pic
+								if items1Index === 2
+									span!=item
+								else
+									=item
+

@@ -1,0 +1,88 @@
+.period-section
+    height 113px
+    padding 0 30px 0 70px
+    margin-bottom 24px
+    &__left-button
+        cursor pointer
+        position absolute
+        left 6px
+        top 6px
+        width 42px
+        height 101px
+        background-color #EFF1F7
+        border-radius 13px 0 0 13px
+    &__title
+        margin-bottom 16px
+    &__list
+        line-height 22px
+        color grayTextLight
+    &__item
+        cursor pointer
+        &:not(:last-child)
+            margin-right 30px
+        &.active
+            font-weight 700
+            color violetColor
+    &__dates
+        flex 0 0 262px
+    &__date
+        flex 0 0 125px
+        &-label
+            line-height 22px
+            color grayTextLight
+            margin-bottom 1px
+
+.history-section
+    padding 0 4px 30px 30px
+    flex 1 1 auto
+    &__header
+        flex 0 0 79px
+        margin-right 26px
+        .add-button
+            margin-left 12px
+        .header-counts
+            margin-left 8px
+        .header-users
+            margin-left 23px
+        .edit-button
+            margin-left 13px
+    &__sort
+        flex 0 0 473px
+    &__date
+        height 48px
+        font-weight 700
+        line-height 48px
+        background-color #EFF0F6
+        color grayText
+        padding 0 14px
+    &__list
+        flex 1 1 0
+        padding-right 10px
+        &-row
+            min-height 67px
+            border-bottom 1px solid #EFF1F7
+        &-item
+            &.item-1
+                flex 0 1 360px
+                font-weight 500
+                font-size 12px
+                line-height 17px
+                letter-spacing -0.3px
+                color grayText3
+                min-width 360px
+            &.item-2
+                flex 1 1 auto
+                line-height 22px
+                color grayText
+                padding 16px 0
+                a
+                    font-weight 700
+            &.item-3
+                flex 0 1 120px
+                justify-content flex-end
+                min-width 120px
+            &-user-pic
+                border-radius 50%
+                width 30px
+                height 30px
+                margin-right 7px

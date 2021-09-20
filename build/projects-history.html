@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link href="./static/img/general/favicon.ico" rel="shortcut icon" />
-    <title>HUB - Профиль</title>
+    <title>HUB - Проекты</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -149,7 +149,7 @@
           </aside>
           <section class="main-section box-col flex-full">
             <header class="header box-row align-center space-between">
-              <div class="header__left box-row align-center"><b class="header__title titleLevel1">Профиль</b></div>
+              <div class="header__left box-row align-center"><b class="header__title titleLevel1">Проекты</b></div>
               <div class="header__right box-row align-center">
                 <div class="header__search relative">
                   <input class="header__search-input searchField" type="text" placeholder="Search" />
@@ -226,14 +226,246 @@
               </div>
             </header>
             <main class="main-container flex-full box-col" role="main">
-              <div class="tabs-section">
-                <div class="tabs-section__wrapper box-row full-height">
-                  <div class="tabs-section__button active">Базовые</div>
-                  <div class="tabs-section__button">Моя команда</div>
-                  <div class="tabs-section__button">Мои Юр. лица</div>
+              <div class="period-section blockWhite box-row align-center space-between relative">
+                <div class="box-col">
+                  <h2 class="period-section__title titleLevel2">История объектов</h2>
+                  <ul class="period-section__list box-row">
+                    <li class="period-section__item active">Сегодня</li>
+                    <li class="period-section__item">Вчера</li>
+                    <li class="period-section__item">Текущая неделя</li>
+                    <li class="period-section__item">Предыдущая неделя</li>
+                    <li class="period-section__item">Текущий месяц</li>
+                    <li class="period-section__item">Прошлый месяц</li>
+                  </ul>
+                </div>
+                <div class="period-section__dates box-row space-between">
+                  <div class="period-section__date box-col">
+                    <label class="period-section__date-label">Начало</label>
+                    <div class="dateField">
+                      <input class="dateField__field inputText" type="text" value="12.01.20" />
+                      <span class="dateField__button box-row align-middle">
+                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M7.00003 5.19832L1.64021 0.731804C1.21593 0.37824 0.585368 0.435564 0.231804 0.85984C-0.12176 1.28412 -0.0644362 1.91468 0.359841 2.26825L6.35984 7.26825C6.73069 7.57728 7.26936 7.57728 7.64021 7.26825L13.6402 2.26825C14.0645 1.91468 14.1218 1.28412 13.7682 0.85984C13.4147 0.435564 12.7841 0.37824 12.3598 0.731804L7.00003 5.19832Z"
+                            fill="#B8C1CC"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="period-section__date box-col">
+                    <label class="period-section__date-label">Конец</label>
+                    <div class="dateField">
+                      <input class="dateField__field inputText" type="text" value="12.01.20" />
+                      <span class="dateField__button box-row align-middle">
+                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M7.00003 5.19832L1.64021 0.731804C1.21593 0.37824 0.585368 0.435564 0.231804 0.85984C-0.12176 1.28412 -0.0644362 1.91468 0.359841 2.26825L6.35984 7.26825C6.73069 7.57728 7.26936 7.57728 7.64021 7.26825L13.6402 2.26825C14.0645 1.91468 14.1218 1.28412 13.7682 0.85984C13.4147 0.435564 12.7841 0.37824 12.3598 0.731804L7.00003 5.19832Z"
+                            fill="#B8C1CC"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="period-section__left-button box-row align-middle">
+                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.80171 7.00003L7.26822 1.64021C7.62178 1.21593 7.56446 0.585368 7.14018 0.231804C6.71591 -0.12176 6.08534 -0.0644362 5.73178 0.359841L0.731779 6.35984C0.422741 6.73069 0.422741 7.26936 0.731779 7.64021L5.73178 13.6402C6.08534 14.0645 6.71591 14.1218 7.14018 13.7682C7.56446 13.4147 7.62178 12.7841 7.26822 12.3598L2.80171 7.00003Z"
+                      fill="#7F7FD5"
+                    />
+                  </svg>
                 </div>
               </div>
-              <div class="project-card"></div>
+              <div class="history-section blockWhite box-col">
+                <div class="history-section__header box-row align-center space-between">
+                  <div class="history-section__performers box-row align-center">
+                    <b class="history-section__header-title titleLevel2">Исполнитель</b>
+                    <button class="add-button addButton box-row align-middle">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M11.0835 6.41665H7.5835V2.91665C7.5835 2.59406 7.32216 2.33331 7.00016 2.33331C6.67816 2.33331 6.41683 2.59406 6.41683 2.91665V6.41665H2.91683C2.59483 6.41665 2.3335 6.6774 2.3335 6.99998C2.3335 7.32256 2.59483 7.58331 2.91683 7.58331H6.41683V11.0833C6.41683 11.4059 6.67816 11.6666 7.00016 11.6666C7.32216 11.6666 7.5835 11.4059 7.5835 11.0833V7.58331H11.0835C11.4055 7.58331 11.6668 7.32256 11.6668 6.99998C11.6668 6.6774 11.4055 6.41665 11.0835 6.41665Z"
+                          fill="#7F7FD5"
+                        />
+                        <mask id="mask0" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="10" height="10">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M11.0835 6.41665H7.5835V2.91665C7.5835 2.59406 7.32216 2.33331 7.00016 2.33331C6.67816 2.33331 6.41683 2.59406 6.41683 2.91665V6.41665H2.91683C2.59483 6.41665 2.3335 6.6774 2.3335 6.99998C2.3335 7.32256 2.59483 7.58331 2.91683 7.58331H6.41683V11.0833C6.41683 11.4059 6.67816 11.6666 7.00016 11.6666C7.32216 11.6666 7.5835 11.4059 7.5835 11.0833V7.58331H11.0835C11.4055 7.58331 11.6668 7.32256 11.6668 6.99998C11.6668 6.6774 11.4055 6.41665 11.0835 6.41665Z"
+                            fill="white"
+                          />
+                        </mask>
+                        <g mask="url(#mask0)">
+                          <rect width="14" height="14" fill="white" />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="history-section__sort">
+                    <div class="sortBlock box-row">
+                      <span class="sortBlock__button active">По порядку</span>
+                      <span class="sortBlock__button">В обратном порядке</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="history-section__list gray-scrollable">
+                  <div class="history-section__date">12.02.2020</div>
+                  <div class="history-section__list-row box-row">
+                    <div class="history-section__list-item box-row align-center item-1">
+                      <img
+                        class="history-section__list-item-user-pic"
+                        src="./static/img/content/project-user.png"
+                        alt=""
+                        role="presentation"
+                      />
+                      Savannah Nguyen
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-2">
+                      <span>Перевел(а) задачу с этапа Новая в этап В работе</span>
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-3">09:20</div>
+                  </div>
+                  <div class="history-section__list-row box-row">
+                    <div class="history-section__list-item box-row align-center item-1">
+                      <img
+                        class="history-section__list-item-user-pic"
+                        src="./static/img/content/project-user.png"
+                        alt=""
+                        role="presentation"
+                      />
+                      Savannah Nguyen
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-2">
+                      <span>
+                        Добавил(а) исполнителя
+                        <a href="/">Екатерину Филимонову</a>
+                        к задаче
+                      </span>
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-3">15:40</div>
+                  </div>
+                  <div class="history-section__list-row box-row">
+                    <div class="history-section__list-item box-row align-center item-1">
+                      <img
+                        class="history-section__list-item-user-pic"
+                        src="./static/img/content/project-user.png"
+                        alt=""
+                        role="presentation"
+                      />
+                      Savannah Nguyen
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-2">
+                      <span>
+                        Откликнулся(лась) к заявке на задачу
+                        <a href="/">Savannah Nguyen</a>
+                      </span>
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-3">12:25</div>
+                  </div>
+                  <div class="history-section__date">13.02.2020</div>
+                  <div class="history-section__list-row box-row">
+                    <div class="history-section__list-item box-row align-center item-1">
+                      <img
+                        class="history-section__list-item-user-pic"
+                        src="./static/img/content/project-user.png"
+                        alt=""
+                        role="presentation"
+                      />
+                      Алиса Федорова
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-2">
+                      <span>
+                        <a href="/">Алиса Федорова</a>
+                        Откликнулся(лась) к заявке на задачу
+                        <a href="/">Проектирование дома</a>
+                      </span>
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-3">09:20</div>
+                  </div>
+                  <div class="history-section__list-row box-row">
+                    <div class="history-section__list-item box-row align-center item-1">
+                      <img
+                        class="history-section__list-item-user-pic"
+                        src="./static/img/content/project-user.png"
+                        alt=""
+                        role="presentation"
+                      />
+                      Savannah Nguyen
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-2">
+                      <span>
+                        Удалил(а) исполнителя
+                        <a href="/">Александра Некрасова</a>
+                        у задачи
+                        <a href="/">Проектирование дома</a>
+                      </span>
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-3">15:40</div>
+                  </div>
+                  <div class="history-section__date">15.02.2020</div>
+                  <div class="history-section__list-row box-row">
+                    <div class="history-section__list-item box-row align-center item-1">
+                      <img
+                        class="history-section__list-item-user-pic"
+                        src="./static/img/content/project-user.png"
+                        alt=""
+                        role="presentation"
+                      />
+                      Алиса Федорова
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-2">
+                      <span>
+                        Редактировал(а) поле ввода
+                        <a href="/">Компетентность</a>
+                        , Архитектор
+                      </span>
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-3">09:20</div>
+                  </div>
+                  <div class="history-section__list-row box-row">
+                    <div class="history-section__list-item box-row align-center item-1">
+                      <img
+                        class="history-section__list-item-user-pic"
+                        src="./static/img/content/project-user.png"
+                        alt=""
+                        role="presentation"
+                      />
+                      Savannah Nguyen
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-2">
+                      <span>
+                        Редактировал(а) поле ввода
+                        <a href="/">Исходные данные</a>
+                        , Процесс строительства включает в себя все организационные, изыскательские, проектные,
+                        строительно-монтажные и пусконаладочные работы, связанные с созданием, изменением или сносом объекта, а
+                        также взаимодействие с компетентными органами по поводу производства таких работ.
+                      </span>
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-3">15:40</div>
+                  </div>
+                  <div class="history-section__list-row box-row">
+                    <div class="history-section__list-item box-row align-center item-1">
+                      <img
+                        class="history-section__list-item-user-pic"
+                        src="./static/img/content/project-user.png"
+                        alt=""
+                        role="presentation"
+                      />
+                      Егор Аверин
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-2">
+                      <span>
+                        Редактировал(а) поле ввода
+                        <a href="/">Компетентность</a>
+                        , Технический директор
+                      </span>
+                    </div>
+                    <div class="history-section__list-item box-row align-center item-3">09:20</div>
+                  </div>
+                </div>
+              </div>
             </main>
           </section>
         </div>

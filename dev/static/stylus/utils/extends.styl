@@ -55,8 +55,23 @@
     cursor pointer
     background-color violetColor
 
+.editButton
+    width 36px
+    height 36px
+    border-radius 8px
+    border none
+    cursor pointer
+    background-color violetColor
 
-
+.countWdget
+    width 30px
+    height 30px
+    border-radius 50%
+    background-color violetColorLight
+    text-align center
+    line-height 30px
+    color violetColor
+    cursor pointer
 
 // text samples
 
@@ -179,6 +194,22 @@
     &::-webkit-scrollbar-thumb
         background-clip padding-box
         background-color rgba(#7F7FD5, 0.8)
+        border 4px solid rgba(0, 0, 0, 0)
+        border-radius 10px
+        min-height 34px
+        width 8px
+
+.gray-scrollable
+    overflow-x hidden
+    overflow-y auto
+    scrollbar-color rgba(#EFF0F6, 0.8) transparent
+    scrollbar-width thin
+    &::-webkit-scrollbar
+        background-color transparent
+        width 16px
+    &::-webkit-scrollbar-thumb
+        background-clip padding-box
+        background-color rgba(#EFF0F6, 0.8)
         border 4px solid rgba(0, 0, 0, 0)
         border-radius 10px
         min-height 34px

@@ -1,12 +1,16 @@
 extends ../layout/main
+include ../components/tabs
+include ../components/mainSidebar
 
 block variables
-	- const title = 'HUB'
+	- const title = 'HUB - Профиль'
 	- const description = ''
 	- const keywords = ''
+	- const layout = true
+	- const pageTitle = 'Профиль'
+	- const innerPage = true
+	- const tabs = ['Базовые', 'Моя команда', 'Мои Юр. лица']
 
-block content
-	//- include ../components/catalogTop
-	//- section.catalog-section.box-row
-	//- 	include ../components/catalogSidebar
-	//- 	include ../components/catalogContent
+block main
+	+tabs(tabs)
+	+b.project-card

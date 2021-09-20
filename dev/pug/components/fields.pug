@@ -17,6 +17,9 @@ mixin plusButton(className)
 mixin addButton(className)
     button(class=className).addButton.box-row.align-middle: +plus()
 
+mixin editButton(className)
+    button(class=className).editButton.box-row.align-middle: +pen()
+
 mixin filePreview(color, type, title)
     +b.filePreview.box-row.align-center
         +e.icon.box-row
@@ -27,3 +30,23 @@ mixin filePreview(color, type, title)
             +e.data.box-row
                 +e('span').date 19.07.2018, 17:39
                 +e('span').size 32 Мб
+
+mixin countWidget(count, className)
+    b.countWdget(class=className)=count
+
+mixin addUsers(users, className)
+    .addUsers.box-row(class=className)
+        each user in users
+            img(src=user)
+
+mixin userChip(src, title)
+    +b.userChip.box-row.align-center
+        +e('img')(src=src).pic
+        +e('span').title=title
+        +e('span').closed.box-row.align-middle: +chipClosed()
+
+mixin purpleButton(title)
+    button.purpleButton=title
+
+mixin purpleLightButton(title)
+    button.purpleLightButton=title

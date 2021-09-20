@@ -28,3 +28,41 @@
         margin-bottom 17px
     p:not(:last-child)
         margin-bottom 20px
+
+.add-users-window
+    padding-right 73px
+    &__title
+        margin-bottom 30px
+    &__select-field
+        border 2px solid purpleBorder
+        border-radius 2px
+        max-height 74px
+        min-height 42px
+        padding 4px
+        margin-bottom 35px
+        .userChip
+            margin 4px
+    &__list
+        height 400px
+        &:after
+            content ''
+            background url(generalImages/modal-shadow.png)
+            width 594px
+            height 7px
+            position absolute
+            left 0
+            bottom 0
+    &__item
+        cursor pointer
+        flex 0 0 50px
+        &-pic
+            width 30px
+            height 30px
+            border-radius 50%
+        &-title
+            font-weight 500
+            font-size 14px
+            color grayText3
+            margin-left 10px
+    &__actions
+        margin-top 40px
